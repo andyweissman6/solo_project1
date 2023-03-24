@@ -12,9 +12,19 @@ RSpec.describe Node do
     
     actual = node.data
     expected = "plop"
+
     expect(actual).to eq(expected)
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
   end
+
+  it "says next node" do
+    node = Node.new("")
+
+    actual = node.next_node
+    expected = nil
+  end
+
+
 end
 
 
