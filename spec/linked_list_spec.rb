@@ -26,16 +26,23 @@ RSpec.describe LinkedList do
 
   it "will count the nodes" do
     list = LinkedList.new
-    
+    list.append("doop")
+
     actual = list.count
     expected = 1
     
     expect(actual).to eq(expected)
   end 
 
+  it "will put data into a string" do
+    list = LinkedList.new
+    list.append("doop")
+    
+    actual = list.to_string
+    expected = "doop"
   
-
-
+    expect(actual).to eq(expected)
+  end
 end
 
 # list
