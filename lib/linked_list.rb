@@ -51,8 +51,6 @@ class LinkedList
     sounds.join(" ")
   end
 
-
-
 end
 
 
