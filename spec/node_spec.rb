@@ -22,6 +22,8 @@ RSpec.describe Node do
 
     actual = node.next_node
     expected = nil
+    expect(actual).to eq(expected)
+    #next node is nil b/c the node has no child node
   end
 
 
