@@ -5,9 +5,8 @@ class LinkedList
     @head = nil
   end
 
-  def append(data)
-    # require 'pry'; binding.pry
 
+  def append(data)
     if @head.nil?
       @head = Node.new(data)
       #if head is nil, then it is empty, so create
@@ -26,6 +25,7 @@ class LinkedList
     #puts data/sound within the node
   end
 
+
   def prepend(data)
     if @head.nil?
       @head = Node.new(data)
@@ -36,6 +36,7 @@ class LinkedList
     end
     data
   end
+
 
   def insert(index, data)
     counter = 1
@@ -49,13 +50,9 @@ class LinkedList
     insert_node = Node.new(data)
     current_node.next_node = insert_node 
     insert_node.next_node = placeholder
+    data
   end
   
-  
-  
-
-
-
 
   def count
     counter = 0
@@ -69,6 +66,7 @@ class LinkedList
     end
     counter 
   end
+
 
   def to_string      
     sounds = []

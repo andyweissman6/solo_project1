@@ -140,10 +140,41 @@ end
       list.prepend("dop")
 
       actual = list.insert(1, "woo")
+      expected = "woo"
+
+      expect(actual).to eq(expected)
+
+      
+    end
+    
+    it "displays 'dop woo plop suu' " do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+      list.insert(1, "woo")
+      
+      
+      actual = list.to_string
       expected = "dop woo plop suu"
 
       expect(actual).to eq(expected)
     end
+
+    it "using 'DOGGY' to confirm insert method truly works" do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+      list.insert(1, "woo")
+      list.insert(3, "DOGGY")
+
+      actual = list.to_string
+      expected = "dop woo plop DOGGY suu"
+
+      expect(actual).to eq(expected)
+    end
+
 
   end
 
