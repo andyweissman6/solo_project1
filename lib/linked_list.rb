@@ -37,6 +37,9 @@ class LinkedList
     data
   end
 
+  def insert(location, data)
+    
+
 
   def count
     counter = 0
@@ -60,6 +63,9 @@ class LinkedList
     end
     sounds.join(" ")
   end
+  
+
+
 
 end
 
