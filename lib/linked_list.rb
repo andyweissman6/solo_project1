@@ -15,7 +15,7 @@ class LinkedList
       previous_node = @head
       new_node = Node.new(data)
       #if head is not empty, head must be the previous node
-      while previous_node.next_node != nil
+      until previous_node.next_node = nil
         #.next_node is how we chain these together 
         previous_node = previous_node.next_node
       end
