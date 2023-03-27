@@ -37,8 +37,24 @@ class LinkedList
     data
   end
 
-  def insert(location, data)
-    
+  def insert(index, data)
+    counter = 1
+    current_node = @head 
+    until counter == index
+      counter += 1
+      current_node = current_node.next_node
+      #moves over one place 
+    end
+    placeholder = current_node.next_node
+    insert_node = Node.new(data)
+    current_node.next_node = insert_node 
+    insert_node.next_node = placeholder
+  end
+  
+  
+  
+
+
 
 
   def count
@@ -57,9 +73,11 @@ class LinkedList
   def to_string      
     sounds = []
     current_node = head
-    while current_node != nil
+    until current_node == nil
       sounds << current_node.data
       current_node = current_node.next_node
+      #assigns current node to next node
+      # way form going from one node to the next
     end
     sounds.join(" ")
   end

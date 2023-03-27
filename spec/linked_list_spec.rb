@@ -133,7 +133,7 @@ end
       expect(actual).to eq(expected)
     end
 
-    it "inserts 'woo' between 'dop' and 'plop' " do
+   it "inserts 'woo' between 'dop' and 'plop' " do
       list = LinkedList.new
       list.append("plop")
       list.append("suu")
@@ -143,8 +143,6 @@ end
       expected = "dop woo plop suu"
 
       expect(actual).to eq(expected)
-
-    
     end
 
   end
