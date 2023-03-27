@@ -24,9 +24,19 @@ class LinkedList
     end
     data
     #puts data/sound within the node
-  
-
   end
+
+  def prepend(data)
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      @head = former_head
+      @head = Node.new(data)
+      @head.next_node = former_head
+    end
+    data
+  end
+
 
   def count
     counter = 0

@@ -59,32 +59,69 @@ RSpec.describe LinkedList do
       expect(list.head.next_node).to be_a(Node)
 
       expect(list.head.next_node.data).to eq("deep")
-      require 'pry'; binding.pry
     end
-
+    
     it "counts the 2 nodes in list" do
       list = LinkedList.new
       list.append("doop")
       list.append("deep")
-
+      
       actual = list.count
       expected = 2
       
       expect(actual).to eq(expected)
       # expect(list.head.next_node).to eq("deep")
+      
+    end
+  end
+end
 
+  describe "Iteration 2" do
+    it "appends 'plop' " do
+      
+      list = LinkedList.new
+      list.append("plop")
+      
+      actual = list.to_string
+      expected = "plop"
+      
+      expect(actual).to eq(expected)
+      # require 'pry'; binding.pry
     end
 
+    it "appends 'suu' " do
+      list = LinkedList.new
+    
+      actual = list.append("suu")
+      expected = "suu"
+      
+      expect(actual).to eq(expected)
+      
+      # require 'pry'; binding.pry
+    end
+
+    it "prepends 'dop' " do
+      list = LinkedList.new
+
+      actual = list.prepend("dop")
+      expected = "dop"
+
+      expect(actual).to eq(expected)
+    end
+
+    it 
 
 
 
-  end
+
+
+  
   
 
   
 
   # describe "Iteration 2" do
-end
+
 
 # list
 # => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
@@ -97,4 +134,4 @@ end
 
 # list.to_string
 # => "doop"
-
+  end
