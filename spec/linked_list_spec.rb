@@ -109,7 +109,21 @@ end
       expect(actual).to eq(expected)
     end
 
-    it 
+    it "displays string of 'dop plop suu' " do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+
+      actual = list.to_string
+      expected = "dop plop suu"
+
+      expect(actual).to eq(expected)
+    end
+  end
+
+
+
 
 
 
@@ -134,4 +148,4 @@ end
 
 # list.to_string
 # => "doop"
-  end
+

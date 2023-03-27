@@ -30,7 +30,7 @@ class LinkedList
     if @head.nil?
       @head = Node.new(data)
     else
-      @head = former_head
+      former_head = @head
       @head = Node.new(data)
       @head.next_node = former_head
     end
