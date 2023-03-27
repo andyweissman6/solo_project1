@@ -120,6 +120,19 @@ end
 
       expect(actual).to eq(expected)
     end
+
+    it "counts 3 nodes 'dop plop suu' " do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+      
+      actual = list.count
+      expected = 3
+
+      expect(actual).to eq(expected)
+    end
+    
   end
 
 
