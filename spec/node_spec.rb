@@ -23,8 +23,6 @@ RSpec.describe Node do
     expected = nil
     expect(actual).to eq(expected)
   end
-
-
 end
 
 

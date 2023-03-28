@@ -7,11 +7,3 @@ class Node
     @next_node = nil
   end
 end
-
-
-
-
-#Node references
-#next = next node
-#current = current node
-#previous = previous node
