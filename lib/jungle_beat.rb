@@ -5,7 +5,6 @@ class JungleBeat
   end
 
   def append(data)
-    
     sounds = data.split
     sounds.each do |sound|
       @list.append(sound)
