@@ -9,20 +9,16 @@ class LinkedList
   def append(data)
     if @head.nil?
       @head = Node.new(data)
-      #if head is nil, then it is empty, so create
-      # a node to become the head
     else
       previous_node = @head
       new_node = Node.new(data)
-      #if head is not empty, head must be the previous node
-      until previous_node.next_node = nil
-        #.next_node is how we chain these together 
+      until previous_node.next_node == nil
         previous_node = previous_node.next_node
       end
       previous_node.next_node = new_node
     end
-    data
-    #puts data/sound within the node
+    data 
+    #last line returns what you want so we put @data here
   end
 
 
@@ -52,8 +48,34 @@ class LinkedList
     insert_node.next_node = placeholder
     data
   end
-  
 
+  def find (index, num_items)
+    counter = 0
+    item_counter = 0
+    string = ""
+    current_node = @head 
+    until counter == index
+      counter += 1
+      current_node = current_node.next_node
+      #moves over one place 
+    end
+    until num_items == item_counter
+      string << "#{current_node.data} "
+      item_counter += 1
+      current_node = current_node.next_node
+    end
+    string.rstrip
+  end
+
+  def includes?(data)
+
+  
+  
+  end
+
+
+
+  
   def count
     counter = 0
     current_node = head
@@ -69,17 +91,16 @@ class LinkedList
 
 
   def to_string      
-    sounds = []
+    sounds = ""
     current_node = head
     until current_node == nil
-      sounds << current_node.data
+      sounds << "#{current_node.data} "
       current_node = current_node.next_node
       #assigns current node to next node
       # way form going from one node to the next
     end
-    sounds.join(" ")
+    sounds.rstrip
   end
-  
 
 
 
