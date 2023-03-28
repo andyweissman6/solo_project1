@@ -143,8 +143,6 @@ end
       expected = "woo"
 
       expect(actual).to eq(expected)
-
-      
     end
     
     it "displays 'dop woo plop suu' " do
@@ -175,6 +173,44 @@ end
       expect(actual).to eq(expected)
     end
 
+    # it "displays string 'deep woo shit shu blop' " do
+
+    it "uses find to " do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      list.to_string
+
+      actual = list.find(2, 1)
+      expected = "shi"
+      expect(actual).to eq(expected)
+
+      
+      actual = list.find(1, 3)
+      expected = "woo shi shu"
+
+      expect(actual).to eq(expected)
+    end
+
+    xit "includes" do
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      list.to_string
+      
+      actual = list.includes?("deep")
+      expected = true
+
+      expect(actual).to eq(expected)
+
+    end
+
+    #jsbjfdbsjfbsj!
 
   end
 
@@ -190,18 +226,4 @@ end
 
   
 
-  # describe "Iteration 2" do
-
-
-# list
-# => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
-
-# list.head.next_node
-# => nil
-
-# list.count
-# => 1
-
-# list.to_string
-# => "doop"
 
