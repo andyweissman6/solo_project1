@@ -18,7 +18,6 @@ class LinkedList
       previous_node.next_node = new_node
     end
     data 
-    #last line returns what you want so we put @data here
   end
 
 
@@ -49,6 +48,7 @@ class LinkedList
     data
   end
 
+
   def find (index, num_items)
     counter = 0
     item_counter = 0
@@ -61,7 +61,6 @@ class LinkedList
     end
     until num_items == item_counter
       string << "#{current_node.data} "
-      # require 'pry'; binding.pry
       item_counter += 1
       current_node = current_node.next_node
     end
@@ -100,22 +99,19 @@ class LinkedList
     to_string.include?(data)
   end
 
+
   def pop
     unless @head.nil?
       current_node = @head
       until current_node.next_node.next_node == nil
         current_node = current_node.next_node
-        #look 2 spaces ahead to see empty, to then indetify the tail
+        #look 2 spaces ahead to see empty, to then indentify the tail
       end
       tail = current_node.next_node
       current_node.next_node = nil
     end
       tail.data
   end
-
-
-
-  
 end
 
 

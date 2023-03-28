@@ -14,7 +14,6 @@ RSpec.describe Node do
     expected = "plop"
 
     expect(actual).to eq(expected)
-    # require 'pry'; binding.pry
   end
 
   it "says next node" do
@@ -23,10 +22,7 @@ RSpec.describe Node do
     actual = node.next_node
     expected = nil
     expect(actual).to eq(expected)
-    #next node is nil b/c the node has no child node
   end
-
-
 end
 
 

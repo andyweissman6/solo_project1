@@ -1,5 +1,6 @@
 require "./lib/linked_list"
 require "./lib/node"
+require 'rspec'
 
 RSpec.describe LinkedList do
   it "exists" do
@@ -23,6 +24,7 @@ describe "Iteration 1" do
 
     actual = list.append("doop")
     expected = "doop"
+
     expect(actual).to eq(expected)
   end
 
@@ -62,7 +64,7 @@ describe "Iteration 1" do
     expect(list.head.next_node.data).to eq("deep")
   end
   
-  it "counts the 2 nodes in list" do
+  it "counts the 2 nodes in list; in correct order" do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -71,7 +73,8 @@ describe "Iteration 1" do
     expected = 2
     
     expect(actual).to eq(expected)
-    # expect(list.head.next_node).to eq("deep")
+    
+    expect(list.head.next_node.data).to eq("deep")
     
   end
 end
@@ -87,30 +90,23 @@ describe "Iteration 2" do
     expected = "plop"
     
     expect(actual).to eq(expected)
-    # require 'pry'; binding.pry
+
   end
 
   it "appends 'suu' " do
     list = LinkedList.new
-  
-    actual = list.append("suu")
-    expected = "suu"
+    list.append("plop")
+    list.append("suu")
+    
+    actual = list.to_string
+    expected = "plop suu"
     
     expect(actual).to eq(expected)
-    
-    # require 'pry'; binding.pry
+
+    # expect(list.head.next_node.data).to eq("deep")
   end
 
   it "prepends 'dop' " do
-    list = LinkedList.new
-
-    actual = list.prepend("dop")
-    expected = "dop"
-
-    expect(actual).to eq(expected)
-  end
-
-  it "displays string of 'dop plop suu' " do
     list = LinkedList.new
     list.append("plop")
     list.append("suu")
@@ -130,7 +126,7 @@ describe "Iteration 2" do
     
     actual = list.count
     expected = 3
-
+    # require 'pry'; binding.pry
     expect(actual).to eq(expected)
   end
 
@@ -139,9 +135,10 @@ describe "Iteration 2" do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
+    list.insert(1, "woo")
 
-    actual = list.insert(1, "woo")
-    expected = "woo"
+    actual = list.to_string
+    expected = "dop woo plop suu"
 
     expect(actual).to eq(expected)
   end
@@ -174,9 +171,7 @@ describe "Iteration 2" do
     expect(actual).to eq(expected)
   end
 
-  # it "displays string 'deep woo shit shu blop' " do
-
-  it "uses find to " do
+  it "uses 'find' to " do
     list = LinkedList.new
     list.append("deep")
     list.append("woo")
@@ -189,7 +184,6 @@ describe "Iteration 2" do
     expected = "shi"
     expect(actual).to eq(expected)
 
-    
     actual = list.find(1, 3)
     expected = "woo shi shu"
 
@@ -228,27 +222,20 @@ describe "Iteration 2" do
     
     actual = list.pop
     expected ="blop"
-
     expect(actual).to eq(expected)
   
     actual = list.pop
     expected = "shu"
-
     expect(actual).to eq(expected)
 
     actual = list.to_string
     expected = "deep woo shi"
-
     expect(actual).to eq(expected)
       
   end
 end
 
-describe "Iteration 3" do
-  it "" do
-  end
-  
-end
+
 
 
 
