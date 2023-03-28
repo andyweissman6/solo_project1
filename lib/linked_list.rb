@@ -100,8 +100,22 @@ class LinkedList
     to_string.include?(data)
   end
 
+  def pop
+    unless @head.nil?
+      current_node = @head
+      until current_node.next_node.next_node == nil
+        current_node = current_node.next_node
+        #look 2 spaces ahead to see empty, to then indetify the tail
+      end
+      tail = current_node.next_node
+      current_node.next_node = nil
+    end
+      tail.data
+  end
 
 
+
+  
 end
 
 
