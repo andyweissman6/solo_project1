@@ -61,19 +61,12 @@ class LinkedList
     end
     until num_items == item_counter
       string << "#{current_node.data} "
+      # require 'pry'; binding.pry
       item_counter += 1
       current_node = current_node.next_node
     end
     string.rstrip
   end
-
-  def includes?(data)
-
-  
-  
-  end
-
-
 
   
   def count
@@ -100,6 +93,11 @@ class LinkedList
       # way form going from one node to the next
     end
     sounds.rstrip
+  end
+
+  
+  def includes?(data)
+    to_string.include?(data)
   end
 
 
