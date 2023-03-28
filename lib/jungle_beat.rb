@@ -5,7 +5,6 @@ class JungleBeat
   end
 
   def append(data)
-    
     sounds = data.split
     sounds.each do |sound|
       @list.append(sound)
@@ -19,8 +18,7 @@ class JungleBeat
 
   def play
     sounds = @list.to_string
-    `say -r 500 -v Boing #{sounds}`
     require 'pry'; binding.pry
+    `say -r 500 -v Boing #{sounds}`
   end
-
 end
