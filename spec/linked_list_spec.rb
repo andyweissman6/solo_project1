@@ -195,7 +195,8 @@ end
       expect(actual).to eq(expected)
     end
 
-    xit "includes" do
+    it "includes" do
+      list = LinkedList.new
       list.append("deep")
       list.append("woo")
       list.append("shi")
@@ -208,9 +209,14 @@ end
 
       expect(actual).to eq(expected)
 
+      actual = list.includes?("dep")
+      expected = false
+
+      expect(actual).to eq(expected)
+
     end
 
-    #jsbjfdbsjfbsj!
+    
 
   end
 
